@@ -1,6 +1,16 @@
 # 移动端多屏适配方案 flexlayout
 这是一套 通过 JS + sass 实现的 多屏适配方案。
 
+## 注意
+本适配方案如发现在手机内嵌页使用时没有正常缩放，那意味着该app 的 webview 没有将 setScalesPage 设定为 yes，或者phonegap 中的 EnableViewportScale 没有设置为 yes 导致， 暂时无解。需自行单独处理。
+如：
+```
+// 临时方案 修复 ios yy 内嵌页 缩放比例不正常问题
+if(/(iPhone|iPod|iPad).*YY\/[0-9.]+/.test(navigator.userAgent)){
+    dpr = 1;
+}
+```
+
 ## 解决的问题
 * 像PC端那样直接用 px 愉快地切图，1套样式适配所有手机
 * 横竖屏随意切换
