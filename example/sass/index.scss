@@ -181,12 +181,14 @@ body { background: #f3f3f3; }
     margin-left: rem(67);
     font-size: rem(14);
     line-height: 1.8;
+    height: 1.8em;
 }
 .news-list dd.news .i {
     display: block;
     margin-left: rem(67);
     font-size: rem(13);
     line-height: 1.4;
+    height: 2.8em;
     color: #666;
 }
 .news-list dd.album .t {
@@ -194,6 +196,7 @@ body { background: #f3f3f3; }
     font-weight: 400;
     font-size: rem(14);
     line-height: 1.8;
+    height: 1.8em;
 }
 .news-list dd.album .cover-list {
     width: 100%;
@@ -211,4 +214,5 @@ body { background: #f3f3f3; }
     background-size: cover;
     background-position: center;
 }
+
 

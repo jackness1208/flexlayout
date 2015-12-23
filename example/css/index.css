@@ -96,7 +96,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   font-size: 0.38rem;
   line-height: 0.78rem;
-  margin-top: -0.78rem;
+  margin-top: -0.79rem;
   color: #fff; }
 
 .news-list dt {
@@ -165,20 +165,23 @@ body {
   font-weight: 400;
   margin-left: 2.09rem;
   font-size: 0.44rem;
-  line-height: 1.8; }
+  line-height: 1.8;
+  height: 1.8em; }
 
 .news-list dd.news .i {
   display: block;
   margin-left: 2.09rem;
   font-size: 0.41rem;
   line-height: 1.4;
+  height: 2.8em;
   color: #666; }
 
 .news-list dd.album .t {
   display: block;
   font-weight: 400;
   font-size: 0.44rem;
-  line-height: 1.8; }
+  line-height: 1.8;
+  height: 1.8em; }
 
 .news-list dd.album .cover-list {
   width: 100%;
@@ -197,3 +200,4 @@ body {
   background-position: center; }
 
 /*# sourceMappingURL=example3.css.map */
+

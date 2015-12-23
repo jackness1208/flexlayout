@@ -47,11 +47,10 @@
 
     var 
 		clientWidth = scWidth > scHeight? scHeight: scWidth,
-		clientHeight = scWidth > scHeight? screenWidth: scHeight,
-		fontEl = document.createElement('style'), 
-		
-		rem = clientWidth / 10, 
+		clientHeight = scWidth > scHeight? scWidth: scHeight,
+        rem = clientWidth / 10, 
 		vrem = clientHeight / 10,
+		fontEl = document.createElement('style'), 
 		scale = 1 / dpr; // 设置viewport，进行缩放，达到高清效果 
 
     var cnt = [
@@ -66,16 +65,20 @@
     }
 	
 	metaEl.setAttribute('content', cnt.join(','));
-	
 
 	docEl.setAttribute('data-dpr', dpr); // 动态写入样式 
 	docEl.firstElementChild.appendChild(fontEl); 
 
+    var 
+        cWidth = docEl.clientWidth,
+        cHeight = docEl.clientHeight,
+        mediaWidth = cWidth > cHeight? cWidth: cHeight;
+
+
 	fontEl.innerHTML = [
 		'html{font-size:' + rem + 'px!important;}',
-		'@media screen and (min-width: '+ clientHeight +'px){',
+		'@media screen and (min-width: '+ mediaWidth +'px){',
 			'html{font-size:'+ vrem +'px!important;}',
 		'}',
 	].join('');
 }();
-
