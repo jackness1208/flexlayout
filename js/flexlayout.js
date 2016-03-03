@@ -10,6 +10,7 @@
 
     var metaEl = document.createElement('meta'),
         head = document.getElementsByTagName('head')[0],
+        htmlEl = document.getElementsByTagName('html')[0],
         docEl = document.documentElement,
         dpr = window.devicePixelRatio || 1,
         scWidth = window.screen.width,
@@ -25,8 +26,9 @@
         }
         scWidth = scWidth * dpr;
         scHeight = scHeight * dpr;
+        htmlEl.className += ' mobile-layout ios-layout';
 
-    } else { // Android
+    } else if(UA.Android) { // Android
         metaEl.content = "width=device-width, initial-scale=1, maximum-scale=1";
 
         var docW2H = docEl.clientWidth - docEl.clientHeight,
@@ -43,6 +45,11 @@
             scWidth = Math.floor(scWidth * dpr);
             scHeight = Math.floor(scHeight * dpr);
         }
+        htmlEl.className += ' mobile-layout android-layout';
+
+    } else {
+        htmlEl.className += ' pc-layout';
+        return;
     }
 
     var 

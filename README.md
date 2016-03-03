@@ -68,3 +68,6 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
+## 更新记录
+### 1.1.0 2016-3-3
+* [ADD] 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC端则 只添加 样式，不会触发 viewport init
