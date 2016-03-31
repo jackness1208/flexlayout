@@ -43,7 +43,7 @@
         }
 
         // 修复部分机型 window.screen.width === docEl.clientWidth 情况, 正常应该是 window.screen.width == docEl.clientWidth * dpr
-        if(scWidth != Math.floor(docEl.clientWidth * dpr)){
+        if(Math.abs(scWidth - docEl.clientWidth * dpr) > 5){
             scWidth = Math.floor(scWidth * dpr);
             scHeight = Math.floor(scHeight * dpr);
         }
