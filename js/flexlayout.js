@@ -1,12 +1,14 @@
 !function(){
 
+
     var iUA = navigator.userAgent,
         UA = {
             YY: /YY[\/ ][0-9.]+/.test(iUA),
-            Android: /Android/i.test(iUA),
+            Android: /Android[\/ ](\d+\.\d+)/.test(iUA) ? RegExp.$1 : false,
             IOS: /(iPhone|iPod|iPad)/.test(iUA),
             UCBrowser: /UCBrowser|UCWEB/.test(iUA)
         };
+
 
     var metaEl = document.createElement('meta'),
         head = document.getElementsByTagName('head')[0],
@@ -66,7 +68,7 @@
         'maximum-scale='+ scale
     ];
 
-    if(UA.Android && !UA.UCBrowser){
+    if(UA.Android && UA.Android <= 4 && !UA.UCBrowser){
         // 修复部分低端机缩放后显示比例不正常问题 而 UC浏览器 碰到这个则会出现忽略 scale 直接 1:1 显示
         cnt.push('target-densitydpi=device-dpi');
     }
@@ -80,6 +82,7 @@
         cWidth = docEl.clientWidth,
         cHeight = docEl.clientHeight,
         mediaWidth = cWidth > cHeight? cWidth: cHeight;
+
 
 
 	fontEl.innerHTML = [
