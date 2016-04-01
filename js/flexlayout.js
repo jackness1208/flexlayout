@@ -22,19 +22,6 @@
     metaEl.name = "viewport";
     head.appendChild(metaEl);
 
-
-    // alert([
-    //     'dpr:' + window.devicePixelRatio,
-    //     'clientWidth:' + docEl.clientWidth,
-    //     'clientHeight:' + docEl.clientHeight,
-    //     'offsetWidth:' + docEl.offsetWidth,
-    //     'offsetHeight:' + docEl.offsetHeight,
-    //     'screenWidth:' + scWidth,
-    //     'screenHeight:' + scHeight,
-
-    // ].join('\n'));
-
-
     if(UA.IOS) { // IOS
         // 临时方案 修复 ios yy 内嵌页 缩放比例不正常问题
         if(UA.YY){
@@ -106,15 +93,6 @@
         cHeight = docEl.clientHeight,
         mediaWidth = cWidth > cHeight? cWidth: cHeight;
 
-    // // 修复部分机型 设置 viewport 后仍然没改变问题（部分内嵌页）
-    // if(dpr != 1 && clWidth == cWidth){
-
-    //     docEl.setAttribute('data-dpr', 1); // 动态写入样式 
-    //     rem = rem / dpr;
-    //     vrem = vrem / dpr;
-    // }
-
-
 
 	fontEl.innerHTML = [
 		'html{font-size:' + rem + 'px!important;}',
@@ -122,6 +100,5 @@
 			'html{font-size:'+ vrem +'px!important;}',
 		'}',
 	].join('');
-    // alert(window.screen.width)
 
 })();
