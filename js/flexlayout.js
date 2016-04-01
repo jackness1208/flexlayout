@@ -1,4 +1,4 @@
-!function(){
+(function(){
 
 
     var iUA = navigator.userAgent,
@@ -16,10 +16,24 @@
         docEl = document.documentElement,
         dpr = window.devicePixelRatio || 1,
         scWidth = window.screen.width,
+        clWidth = docEl.clientWidth,
         scHeight = window.screen.height;
 
     metaEl.name = "viewport";
     head.appendChild(metaEl);
+
+
+    // alert([
+    //     'dpr:' + window.devicePixelRatio,
+    //     'clientWidth:' + docEl.clientWidth,
+    //     'clientHeight:' + docEl.clientHeight,
+    //     'offsetWidth:' + docEl.offsetWidth,
+    //     'offsetHeight:' + docEl.offsetHeight,
+    //     'screenWidth:' + scWidth,
+    //     'screenHeight:' + scHeight,
+
+    // ].join('\n'));
+
 
     if(UA.IOS) { // IOS
         // 临时方案 修复 ios yy 内嵌页 缩放比例不正常问题
@@ -31,6 +45,12 @@
         htmlEl.className += ' mobile-layout ios-layout';
 
     } else if(UA.Android) { // Android
+
+        // 修复部分机型内嵌页(oppo R8) 无论是 clientWidth、 offsetWidth、 screenWidth 都相等的情况（webview 已写死尺寸， 缩放不了）
+        if(docEl.clientWidth == docEl.offsetWidth && docEl.offsetWidth == scWidth){
+            dpr = 1;
+        }
+        
         metaEl.content = "width=device-width, initial-scale=1, maximum-scale=1";
 
         var docW2H = docEl.clientWidth - docEl.clientHeight,
@@ -42,8 +62,9 @@
             scHeight = window.screen.width;
         }
 
+
         // 修复部分机型 window.screen.width === docEl.clientWidth 情况, 正常应该是 window.screen.width == docEl.clientWidth * dpr
-        if(Math.abs(scWidth - docEl.clientWidth * dpr) > 5){
+        if(Math.abs(scWidth - docEl.clientWidth * dpr) > 2){
             scWidth = Math.floor(scWidth * dpr);
             scHeight = Math.floor(scHeight * dpr);
         }
@@ -76,12 +97,22 @@
 	metaEl.setAttribute('content', cnt.join(','));
 
 	docEl.setAttribute('data-dpr', dpr); // 动态写入样式 
+
 	docEl.firstElementChild.appendChild(fontEl); 
+
 
     var 
         cWidth = docEl.clientWidth,
         cHeight = docEl.clientHeight,
         mediaWidth = cWidth > cHeight? cWidth: cHeight;
+
+    // // 修复部分机型 设置 viewport 后仍然没改变问题（部分内嵌页）
+    // if(dpr != 1 && clWidth == cWidth){
+
+    //     docEl.setAttribute('data-dpr', 1); // 动态写入样式 
+    //     rem = rem / dpr;
+    //     vrem = vrem / dpr;
+    // }
 
 
 
@@ -91,4 +122,6 @@
 			'html{font-size:'+ vrem +'px!important;}',
 		'}',
 	].join('');
-}();
+    // alert(window.screen.width)
+
+})();
