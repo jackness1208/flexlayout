@@ -1,3 +1,4 @@
+'use strict';
 (function(){
 
 
@@ -18,6 +19,11 @@
         scWidth = window.screen.width,
         clWidth = docEl.clientWidth,
         scHeight = window.screen.height;
+
+    // 已经初始化过, 跳出
+    if(docEl.getAttribute('data-dpr')) {
+        return;
+    }
 
     metaEl.name = "viewport";
     head.appendChild(metaEl);

@@ -69,6 +69,9 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
+ ### 1.2.0 2016-7-21
+* [ADD] 添加防止重复加载此js 功能
+
 ### 1.1.1 2016-3-31
 * [FIX] 修复 组件 在 华为 M8 下显示有问题 BUG
 * [FIX] 修复 组件 在 乐视 X501 下显示有问题 BUG
