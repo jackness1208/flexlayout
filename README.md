@@ -27,8 +27,12 @@ JS 可用 gulp-inline 等前端自动化工具 把 js 内容 inline 到项目 ht
 <head>
 <meta charset="UTF-8">
 <title>flexlayout</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 </head>
+<script>
+window.__flexlayoutConfig = { // 不填默认会针对 viewport 进行缩放
+    scale: true
+};
+</script>
 <script src="js/flexlayout.js" inline></script>
 <body>
 ...
