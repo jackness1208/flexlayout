@@ -69,12 +69,16 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
- ### 1.2.0 2016-7-21
+### 1.3.0 [2016-8-26]
+* [ADD] 添加 组件会根据 window.__flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
+* [ADD] pc 端观看 本组件页面也会进行 font-size, dpr 计算
+
+### 1.2.0 [2016-7-21]
 * [ADD] 添加防止重复加载此js 功能
 
-### 1.1.1 2016-3-31
+### 1.1.1 [2016-3-31]
 * [FIX] 修复 组件 在 华为 M8 下显示有问题 BUG
 * [FIX] 修复 组件 在 乐视 X501 下显示有问题 BUG
 
-### 1.1.0 2016-3-3
+### 1.1.0 [2016-3-3]
 * [ADD] 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC端则 只添加 样式，不会触发 viewport init
