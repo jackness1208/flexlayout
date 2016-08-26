@@ -9,7 +9,7 @@
 ```
 // 临时方案 修复 ios yy 内嵌页 缩放比例不正常问题
 if(/(iPhone|iPod|iPad).*YY\/[0-9.]+/.test(navigator.userAgent)){
-    dpr = 1;
+    needScale = 1;
 }
 ```
 
