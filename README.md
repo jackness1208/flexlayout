@@ -9,7 +9,7 @@
 ```
 // 临时方案 修复 ios yy 内嵌页 缩放比例不正常问题
 if(/(iPhone|iPod|iPad).*YY\/[0-9.]+/.test(navigator.userAgent)){
-    dpr = 1;
+    needScale = 1;
 }
 ```
 
@@ -27,8 +27,12 @@ JS 可用 gulp-inline 等前端自动化工具 把 js 内容 inline 到项目 ht
 <head>
 <meta charset="UTF-8">
 <title>flexlayout</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 </head>
+<script>
+window.__flexlayoutConfig = { // 不填默认会针对 viewport 进行缩放
+    scale: true
+};
+</script>
 <script src="js/flexlayout.js" inline></script>
 <body>
 ...
@@ -69,9 +73,16 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
-### 1.1.1 2016-3-31
+### 1.3.0 [2016-8-26]
+* [ADD] 添加 组件会根据 window.__flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
+* [ADD] pc 端观看 本组件页面也会进行 font-size, dpr 计算
+
+### 1.2.0 [2016-7-21]
+* [ADD] 添加防止重复加载此js 功能
+
+### 1.1.1 [2016-3-31]
 * [FIX] 修复 组件 在 华为 M8 下显示有问题 BUG
 * [FIX] 修复 组件 在 乐视 X501 下显示有问题 BUG
 
-### 1.1.0 2016-3-3
+### 1.1.0 [2016-3-3]
 * [ADD] 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC端则 只添加 样式，不会触发 viewport init
