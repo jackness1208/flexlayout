@@ -107,7 +107,7 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
-### 1.3.0 [2016-12-05]
+### 1.4.0 [2016-12-05]
 * [ADD] 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
 
 ### 1.3.0 [2016-8-26]
