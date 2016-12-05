@@ -3,6 +3,48 @@ $psdWidth: 320!default;
 @function rem($val){
     @return round($val / $psdWidth * 10 * 100) / 100 * 1rem;
 }
+@function multiStr($str, $n){
+    @if type-of($str) == 'number' {
+        @return $str * $n;
+    }
+
+    @if type-of($str) == 'list' {
+        $newList: ();
+        @each $item in $str {
+            $newList: append($newList, multiStr($item, $n));
+        }
+        @return $newList;
+    }
+
+    @return $str;
+}
+
+@mixin dpr ($key, $val) {
+    [data-dpr="4"] & {
+        #{$key}: multiStr($val, 4 / 2);
+    }
+    [data-dpr="3.5"] & {
+        #{$key}: multiStr($val, 3.5 / 2);
+    }
+    [data-dpr="3"] & {
+        #{$key}: multiStr($val, 3 / 2);
+    }
+    [data-dpr="2.75"] & {
+        #{$key}: multiStr($val, 2.75 / 2);
+    }
+    [data-dpr="2.5"] & {
+        #{$key}: multiStr($val, 2.5 / 2);
+    }
+    [data-dpr="2"] & {
+        #{$key}: multiStr($val, 2 / 2);
+    }
+    [data-dpr="1"] & {
+        #{$key}: multiStr($val, 1 / 2);
+    }
+
+    #{$key}: multiStr($val, 1 / 2);
+}
+
 
 
 /* reset */
@@ -34,7 +76,11 @@ a:active,a:visited{
 
 
 /* page */
-body { background: #f3f3f3; }
+body { 
+    background: #f3f3f3; 
+    width: rem(320); 
+    margin: 0 auto;
+}
 .nav {
     display: block;
     height: rem(41);
@@ -59,7 +105,8 @@ body { background: #f3f3f3; }
     -webkit-box-flex: 1;
     box-flex: 1;
     height: rem(40);
-    font-size: rem(15);
+    @include dpr(font-size, 15px);
+    // font-size: rem(15);
     line-height: rem(40);
     text-align: center;
 }
@@ -103,7 +150,8 @@ body { background: #f3f3f3; }
     width: 100%;
     padding: 0 rem(8);
     background: rgba(0,0,0,.5);
-    font-size: rem(12);
+    // font-size: rem(12);
+    @include dpr(font-size, 12px);
     line-height: rem(25);
     margin-top: rem(-25);
     color: #fff;
@@ -116,14 +164,16 @@ body { background: #f3f3f3; }
     padding-top: rem(8);
     padding-left: rem(12);
     line-height: rem(28);
-    font-size: rem(13);
+    // font-size: rem(13);
+    @include dpr(font-size, 13px);
     color: #777;
     background: #f3f3f3;
 }
 .news-list dd {
     position: relative;
     padding: rem(12) rem(12) rem(35);
-    border-top: 1px solid #ddd;
+    // border-top: 1px solid #ddd;
+    @include dpr(border-top, 1px solid #ddd);
     background: #fff;
 }
 .news-list dd:after {
@@ -141,7 +191,8 @@ body { background: #f3f3f3; }
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 rem(12);
-    font-size: rem(13);
+    // font-size: rem(13);
+    @include dpr(font-size, 13px);
 
 }
 .news-list dd .ft:after {
@@ -179,14 +230,16 @@ body { background: #f3f3f3; }
     display: block;
     font-weight: 400;
     margin-left: rem(67);
-    font-size: rem(14);
+    // font-size: rem(14);
+    @include dpr(font-size, 14px);
     line-height: 1.8;
     height: 1.8em;
 }
 .news-list dd.news .i {
     display: block;
     margin-left: rem(67);
-    font-size: rem(13);
+    // font-size: rem(13);
+    @include dpr(font-size, 13px);
     line-height: 1.4;
     height: 2.8em;
     color: #666;
@@ -194,7 +247,8 @@ body { background: #f3f3f3; }
 .news-list dd.album .t {
     display: block;
     font-weight: 400;
-    font-size: rem(14);
+    // font-size: rem(14);
+    @include dpr(font-size, 14px);
     line-height: 1.8;
     height: 1.8em;
 }

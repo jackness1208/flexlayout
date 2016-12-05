@@ -5,6 +5,9 @@
 本适配方案如发现在手机内嵌页使用时没有正常缩放，那意味着：
 该app 的 webview 没有将 setScalesPage 设定为 yes 或者 PhoneGap 中的 EnableViewportScale 没有设置为 true 导致。
 暂时无解。需自行单独处理。
+
+当前版本 若不同组件的 psdWidth 不一样时， 使用 dpr 函数将会出现 字体显示不一致的问题， 待修复
+
 如：
 ```
 // 临时方案 修复 ios yy 内嵌页 缩放比例不正常问题
@@ -46,6 +49,36 @@ $psdWidth: 320!default;
 @function rem($val){
     @return round($val / $psdWidth * 10 * 100) / 100 * 1rem;
 }
+
+@function multiStr($str, $n){
+    @if type-of($str) == 'number' {
+        @return $str * $n;
+    }
+
+    @if type-of($str) == 'list' {
+        $newList: ();
+        @each $item in $str {
+            $newList: append($newList, multiStr($item, $n));
+        }
+        @return $newList;
+    }
+
+    @return $str;
+}
+
+@mixin dpr ($key, $val) {
+    [data-dpr="3"] & {
+        #{$key}: multiStr($val, 1.5);
+    }
+    [data-dpr="2"] & {
+        #{$key}: multiStr($val, 1);
+    }
+    [data-dpr="1"] & {
+        #{$key}: multiStr($val, 0.5);
+    }
+
+    #{$key}: multiStr($val, 1);
+}
 ```
 
 ## 多组件引用方式参考
@@ -59,6 +92,7 @@ $psdWidth: 640!global;
         width: rem(320);
         height: rem(320);
         padding: rem(20) rem(20) rem(20) rem(15);
+        @include dpr(font-size, 12px);
     }
     ...
 }
@@ -73,6 +107,9 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
+### 1.3.0 [2016-12-05]
+* [ADD] 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
+
 ### 1.3.0 [2016-8-26]
 * [ADD] 添加 组件会根据 window.__flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
 * [ADD] pc 端观看 本组件页面也会进行 font-size, dpr 计算
