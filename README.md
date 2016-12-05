@@ -67,17 +67,29 @@ $psdWidth: 320!default;
 }
 
 @mixin dpr ($key, $val) {
+    [data-dpr="4"] & {
+        #{$key}: multiStr($val, 4 / 2);
+    }
+    [data-dpr="3.5"] & {
+        #{$key}: multiStr($val, 3.5 / 2);
+    }
     [data-dpr="3"] & {
-        #{$key}: multiStr($val, 1.5);
+        #{$key}: multiStr($val, 3 / 2);
+    }
+    [data-dpr="2.75"] & {
+        #{$key}: multiStr($val, 2.75 / 2);
+    }
+    [data-dpr="2.5"] & {
+        #{$key}: multiStr($val, 2.5 / 2);
     }
     [data-dpr="2"] & {
-        #{$key}: multiStr($val, 1);
+        #{$key}: multiStr($val, 2 / 2);
     }
     [data-dpr="1"] & {
-        #{$key}: multiStr($val, 0.5);
+        #{$key}: multiStr($val, 1 / 2);
     }
 
-    #{$key}: multiStr($val, 1);
+    #{$key}: multiStr($val, 1 / 2);
 }
 ```
 
