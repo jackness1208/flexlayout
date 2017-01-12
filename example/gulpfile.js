@@ -30,7 +30,7 @@ gulp.task('connect', function(){
 });
 
 gulp.task('css', function(){
-    gulp.src('./sass/**/*.scss')
+    gulp.src('./sass/*.scss')
         .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
         .pipe(gulp.dest('./css'));
 

@@ -1,0 +1,41 @@
+$psdWidth: 320!default;
+
+@function rem($val){
+    @return round($val / $psdWidth * 10 * 100) / 100 * 1rem;
+}
+
+@function dpr($val){
+    @return round($val * 100) / 100 / 2 * 1px;
+}
+
+@function multiStr($str, $n){
+    @if type-of($str) == 'number' {
+        @return $str * $n;
+    }
+
+    @if type-of($str) == 'list' {
+        $newList: ();
+        @each $item in $str {
+            $newList: append($newList, multiStr($item, $n));
+        }
+        @return $newList;
+    }
+
+    @return $str;
+}
+
+@mixin dpr ($key, $val) {
+    $scale: 1;
+    
+    [data-dpr="3"] & {
+        #{$key}: multiStr($val, 1.5 * $scale);
+    }
+    [data-dpr="2"] & {
+        #{$key}: multiStr($val,1 * $scale);
+    }
+    [data-dpr="1"] & {
+        #{$key}: multiStr($val,0.5 * $scale);
+    }
+
+    #{$key}: multiStr($val, 0.5 * $scale);
+}

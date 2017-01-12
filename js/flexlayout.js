@@ -5,7 +5,8 @@
     var 
         iUA = navigator.userAgent,
         // 配置是否使用 缩放 viewport
-        needScale = window.__flexlayoutConfig && window.__flexlayoutConfig.scale === true ? true : false,
+        // needScale = window.__flexlayoutConfig && window.__flexlayoutConfig.scale === true ? true : false,
+        needScale = true,
         UA = {
             YY: /YY[\/ ][0-9.]+/.test(iUA),
             Android: /Android[\/ ](\d+\.\d+)/.test(iUA) ? RegExp.$1 : false,
@@ -29,6 +30,18 @@
         head.appendChild(metaEl);
     }
 
+    
+
+    if(dpr < 2){
+        dpr = 1;
+
+    } else if(dpr < 3){
+        dpr = 2;
+
+    } else {
+        dpr = 3;
+    }
+
     // 已经初始化过, 跳出
     if(htmlEl.getAttribute('data-dpr')) {
         return;
@@ -37,6 +50,7 @@
     if(UA.IOS && UA.YY){
         needScale = false;
     }
+
 
 
     metaEl.content = "width=device-width, initial-scale=1, maximum-scale=1";
@@ -100,6 +114,9 @@
     }
     if(needScale){
         metaEl.setAttribute('content', cnt.join(','));
+
+    } else {
+        dpr = 1;
     }
 
 	htmlEl.setAttribute('data-dpr', dpr); // 动态写入样式 

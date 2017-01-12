@@ -119,6 +119,10 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
+### 1.4.1 [2016-01-12]
+* [FIX] 强制打开 视频流所发(选择性打开，发现在 dpr 部分会存在问题, 暂时措施)
+* [EDIT] 将 dpr 归纳成 3 2 1 三种， 其他向下取整
+
 ### 1.4.0 [2016-12-05]
 * [ADD] 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
 
