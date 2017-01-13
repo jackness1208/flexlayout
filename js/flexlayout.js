@@ -5,8 +5,8 @@
     var 
         iUA = navigator.userAgent,
         // 配置是否使用 缩放 viewport
-        // needScale = window.__flexlayoutConfig && window.__flexlayoutConfig.scale === true ? true : false,
-        needScale = true,
+        needScale = window.__flexlayoutConfig && window.__flexlayoutConfig.scale === true ? true : false,
+        // needScale = true,
         UA = {
             YY: /YY[\/ ][0-9.]+/.test(iUA),
             Android: /Android[\/ ](\d+\.\d+)/.test(iUA) ? RegExp.$1 : false,
@@ -67,7 +67,6 @@
             needScale = false;
         }
 
-
         if(needScale){
             var docW2H = docEl.clientWidth - docEl.clientHeight,
                 scW2H = scWidth - scHeight;
@@ -118,6 +117,7 @@
     } else {
         dpr = 1;
     }
+
 
 	htmlEl.setAttribute('data-dpr', dpr); // 动态写入样式 
 

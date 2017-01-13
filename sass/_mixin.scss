@@ -25,7 +25,7 @@ $psdWidth: 320!default;
 }
 
 @mixin dpr ($key, $val) {
-    $scale: 1;
+    $scale: 700 / $psdWidth;
     
     [data-dpr="3"] & {
         #{$key}: multiStr($val, 1.5 * $scale);
