@@ -67,23 +67,18 @@ $psdWidth: 320!default;
 }
 
 @mixin dpr ($key, $val) {
-    [data-dpr="4"] & {
-        #{$key}: multiStr($val, 4 / 2);
-    }
-    [data-dpr="3.5"] & {
-        #{$key}: multiStr($val, 3.5 / 2);
-    }
+    
     [data-dpr="3"] & {
         #{$key}: multiStr($val, 3 / 2);
-    }
-    [data-dpr="2.75"] & {
-        #{$key}: multiStr($val, 2.75 / 2);
     }
     [data-dpr="2.5"] & {
         #{$key}: multiStr($val, 2.5 / 2);
     }
     [data-dpr="2"] & {
         #{$key}: multiStr($val, 2 / 2);
+    }
+    [data-dpr="1.5"] & {
+        #{$key}: multiStr($val, 1.5);
     }
     [data-dpr="1"] & {
         #{$key}: multiStr($val, 1 / 2);
@@ -119,6 +114,10 @@ demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
 ![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
 
 ## 更新记录
+### 1.4.2 [2016-01-16]
+* [ADD] 将dpr 改为 分成 3, 2.5, 2, 1.5, 1 五种
+* [FIX] 修复 dpr 字体问题
+
 ### 1.4.1 [2016-01-12]
 * [FIX] 强制打开 视频流所发(选择性打开，发现在 dpr 部分会存在问题, 暂时措施)
 * [EDIT] 将 dpr 归纳成 3 2 1 三种， 其他向下取整

@@ -27,11 +27,17 @@ $psdWidth: 320!default;
 @mixin dpr ($key, $val) {
     $scale: 700 / $psdWidth;
     
-    [data-dpr="3"] & {
+    [data-dpr="3"] & { // iphone 6 plus
         #{$key}: multiStr($val, 1.5 * $scale);
     }
-    [data-dpr="2"] & {
+    [data-dpr="2.5"] & {
+        #{$key}: multiStr($val,1.25 * $scale);
+    }
+    [data-dpr="2"] & { // iphone 5, 6
         #{$key}: multiStr($val,1 * $scale);
+    }
+    [data-dpr="1.5"] & { // 三星 i9100
+        #{$key}: multiStr($val,0.75 * $scale);
     }
     [data-dpr="1"] & {
         #{$key}: multiStr($val,0.5 * $scale);
