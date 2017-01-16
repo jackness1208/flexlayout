@@ -191,6 +191,8 @@ body {
   height: 44.84375px; }
   [data-dpr="3"] .nav {
     height: 134.53125px; }
+  [data-dpr="2.5"] .nav {
+    height: 112.10938px; }
   [data-dpr="2"] .nav {
     height: 89.6875px; }
   [data-dpr="1.5"] .nav {
@@ -203,6 +205,8 @@ body {
     line-height: 43.75px; }
     [data-dpr="3"] .nav a {
       height: 131.25px; }
+    [data-dpr="2.5"] .nav a {
+      height: 109.375px; }
     [data-dpr="2"] .nav a {
       height: 87.5px; }
     [data-dpr="1.5"] .nav a {
@@ -211,6 +215,8 @@ body {
       height: 43.75px; }
     [data-dpr="3"] .nav a {
       font-size: 49.21875px; }
+    [data-dpr="2.5"] .nav a {
+      font-size: 41.01563px; }
     [data-dpr="2"] .nav a {
       font-size: 32.8125px; }
     [data-dpr="1.5"] .nav a {
@@ -219,6 +225,8 @@ body {
       font-size: 16.40625px; }
     [data-dpr="3"] .nav a {
       line-height: 131.25px; }
+    [data-dpr="2.5"] .nav a {
+      line-height: 109.375px; }
     [data-dpr="2"] .nav a {
       line-height: 87.5px; }
     [data-dpr="1.5"] .nav a {
@@ -230,6 +238,8 @@ body {
   border-bottom: 1.09375px solid #ddd; }
   [data-dpr="3"] .nav-main {
     border-bottom: 3.28125px solid #ddd; }
+  [data-dpr="2.5"] .nav-main {
+    border-bottom: 2.73438px solid #ddd; }
   [data-dpr="2"] .nav-main {
     border-bottom: 2.1875px solid #ddd; }
   [data-dpr="1.5"] .nav-main {
@@ -241,6 +251,8 @@ body {
   font-size: 13.125px; }
   [data-dpr="3"] .head-banner .t {
     font-size: 39.375px; }
+  [data-dpr="2.5"] .head-banner .t {
+    font-size: 32.8125px; }
   [data-dpr="2"] .head-banner .t {
     font-size: 26.25px; }
   [data-dpr="1.5"] .head-banner .t {
@@ -253,6 +265,8 @@ body {
   line-height: 30.625px; }
   [data-dpr="3"] .news-list dt {
     font-size: 42.65625px; }
+  [data-dpr="2.5"] .news-list dt {
+    font-size: 35.54688px; }
   [data-dpr="2"] .news-list dt {
     font-size: 28.4375px; }
   [data-dpr="1.5"] .news-list dt {
@@ -261,6 +275,8 @@ body {
     font-size: 14.21875px; }
   [data-dpr="3"] .news-list dt {
     line-height: 91.875px; }
+  [data-dpr="2.5"] .news-list dt {
+    line-height: 76.5625px; }
   [data-dpr="2"] .news-list dt {
     line-height: 61.25px; }
   [data-dpr="1.5"] .news-list dt {
@@ -272,6 +288,8 @@ body {
   border-top: 1.09375px solid #ddd; }
   [data-dpr="3"] .news-list dd {
     border-top: 3.28125px solid #ddd; }
+  [data-dpr="2.5"] .news-list dd {
+    border-top: 2.73438px solid #ddd; }
   [data-dpr="2"] .news-list dd {
     border-top: 2.1875px solid #ddd; }
   [data-dpr="1.5"] .news-list dd {
@@ -282,6 +300,8 @@ body {
     font-size: 14.21875px; }
     [data-dpr="3"] .news-list dd .ft {
       font-size: 42.65625px; }
+    [data-dpr="2.5"] .news-list dd .ft {
+      font-size: 35.54688px; }
     [data-dpr="2"] .news-list dd .ft {
       font-size: 28.4375px; }
     [data-dpr="1.5"] .news-list dd .ft {
@@ -293,6 +313,8 @@ body {
   font-size: 15.3125px; }
   [data-dpr="3"] .news-list dd.news .t {
     font-size: 45.9375px; }
+  [data-dpr="2.5"] .news-list dd.news .t {
+    font-size: 38.28125px; }
   [data-dpr="2"] .news-list dd.news .t {
     font-size: 30.625px; }
   [data-dpr="1.5"] .news-list dd.news .t {
@@ -304,6 +326,8 @@ body {
   font-size: 14.21875px; }
   [data-dpr="3"] .news-list dd.news .i {
     font-size: 42.65625px; }
+  [data-dpr="2.5"] .news-list dd.news .i {
+    font-size: 35.54688px; }
   [data-dpr="2"] .news-list dd.news .i {
     font-size: 28.4375px; }
   [data-dpr="1.5"] .news-list dd.news .i {
@@ -315,6 +339,8 @@ body {
   font-size: 15.3125px; }
   [data-dpr="3"] .news-list dd.album .t {
     font-size: 45.9375px; }
+  [data-dpr="2.5"] .news-list dd.album .t {
+    font-size: 38.28125px; }
   [data-dpr="2"] .news-list dd.album .t {
     font-size: 30.625px; }
   [data-dpr="1.5"] .news-list dd.album .t {
