@@ -1,0 +1,25 @@
+{
+  "name": "flexlayout",
+  "version": "1.5.0",
+  "description": "mobile layout",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/flexlayout.git"
+  },
+  "keywords": [
+    "flexlayout"
+  ],
+  "author": "jackness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/flexlayout/issues"
+  },
+  "homepage": "https://github.com/jackness1208/flexlayout#readme"
+}
