@@ -1,2 +1,3 @@
-const flexlayout = require('./lib/flexlayout.js');
+var flexlayout = require('./lib/flexlayout.js');
 module.exports = flexlayout;
+
