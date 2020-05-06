@@ -1,34 +1,37 @@
 # 版本信息
+## 1.6.4 (2020-05-06)
+* fix: 修复部分机型首次初始化时获取不了屏幕宽度问题
+
 ## 1.6.2 (2019-03-17)
-* [FIX] 修复 `pc-layout`, `mobile-layout` 重复添加问题
+* fix: 修复 `pc-layout`, `mobile-layout` 重复添加问题
 
 ## 1.6.0 (2019-03-12)
-* [ADD] 添加 window.onresize 事件， 如 窗口大小发生变化 则重新初始化
+* feat: 添加 window.onresize 事件， 如 窗口大小发生变化 则重新初始化
 
 ## 1.5.0 (2018-09-16)
 * 做成 npm 包
 
 ### 1.4.2 [2016-01-16]
-* [ADD] 将dpr 改为 分成 3, 2.5, 2, 1.5, 1 五种
-* [FIX] 修复 dpr 字体问题
+* feat: 将dpr 改为 分成 3, 2.5, 2, 1.5, 1 五种
+* fix: 修复 dpr 字体问题
 
 ### 1.4.1 [2016-01-12]
-* [FIX] 强制打开 视频流所发(选择性打开，发现在 dpr 部分会存在问题, 暂时措施)
-* [EDIT] 将 dpr 归纳成 3 2 1 三种， 其他向下取整
+* feat: 将 dpr 归纳成 3 2 1 三种， 其他向下取整
+* fix: 强制打开 视频流所发(选择性打开，发现在 dpr 部分会存在问题, 暂时措施)
 
 ### 1.4.0 [2016-12-05]
-* [ADD] 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
+* feat: 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
 
 ### 1.3.0 [2016-8-26]
-* [ADD] 添加 组件会根据 window.__flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
-* [ADD] pc 端观看 本组件页面也会进行 font-size, dpr 计算
+* feat: 添加 组件会根据 window.__flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
+* feat: pc 端观看 本组件页面也会进行 font-size, dpr 计算
 
 ### 1.2.0 [2016-7-21]
-* [ADD] 添加防止重复加载此js 功能
+* feat: 添加防止重复加载此js 功能
 
 ### 1.1.1 [2016-3-31]
-* [FIX] 修复 组件 在 华为 M8 下显示有问题 BUG
-* [FIX] 修复 组件 在 乐视 X501 下显示有问题 BUG
+* fix: 修复 组件 在 华为 M8 下显示有问题 BUG
+* fix: 修复 组件 在 乐视 X501 下显示有问题 BUG
 
 ### 1.1.0 [2016-3-3]
-* [ADD] 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC端则 只添加 样式，不会触发 viewport init
+* feat: 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC端则 只添加 样式，不会触发 viewport init
