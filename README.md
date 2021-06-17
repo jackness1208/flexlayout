@@ -24,7 +24,7 @@ if(/(iPhone|iPod|iPad).*YY\/[0-9.]+/.test(navigator.userAgent)){
 ## JS 写法
 JS 可用 gulp-inline 等前端自动化工具 把 js 内容 inline 到项目 html 里面，or 直接把代码贴到 html 头部
 
-```
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -32,8 +32,11 @@ JS 可用 gulp-inline 等前端自动化工具 把 js 内容 inline 到项目 ht
 <title>flexlayout</title>
 </head>
 <script>
-window.__flexlayoutConfig = { // 不填默认会针对 viewport 进行缩放
-    scale: true
+window.__flexlayoutConfig = { 
+    // 不填默认会针对 viewport 进行缩放
+    scale: true,
+    // 不填默认会对 竖屏重新进行 font-size 适配
+    vrem: true
 };
 </script>
 <script src="js/flexlayout.js" inline></script>
