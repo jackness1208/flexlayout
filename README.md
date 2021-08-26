@@ -24,26 +24,9 @@ if(/(iPhone|iPod|iPad).*YY\/[0-9.]+/.test(navigator.userAgent)){
 ## JS 写法
 JS 可用 gulp-inline 等前端自动化工具 把 js 内容 inline 到项目 html 里面，or 直接把代码贴到 html 头部
 
-```html
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<title>flexlayout</title>
-</head>
-<script>
-window.__flexlayoutConfig = { 
-    // 不填默认会针对 viewport 进行缩放
-    scale: true,
-    // 不填默认会对 竖屏重新进行 font-size 适配
-    vrem: true
-};
-</script>
-<script src="js/flexlayout.js" inline></script>
-<body>
-...
-</html>
-
+```typescript
+import { initFlexlayout } from 'yyl-flexlayout'
+initFlexlayout()
 ```
 
 ## sass mixin 写法
@@ -108,10 +91,14 @@ $psdWidth: 640!global;
 }
 ```
 
-示例图
+## types
+```typescript
+export interface InitFlexlayoutOption {
+    /** 是否进行 meta 缩放处理,默认为 true */
+    scale?: boolean;
+    /** 是否进行竖屏的rem 单独适配,默认为 true */
+    vrem?: boolean;
+}
+export declare function initFlexlayout(op?: InitFlexlayoutOption): void;
 
-![info](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/info01.png)
-
-demo 在[这里](http://www.jackness.org/lab/2015/flexlayout/html/example3.html)
-
-![demo](https://raw.githubusercontent.com/jackness1208/resource/master/project/flexlayout/images/qrcode.png)
+```

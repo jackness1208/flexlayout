@@ -1,0 +1,51 @@
+{
+  "name": "test-case-base",
+  "version": "0.1.0",
+  "main": "index.js",
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "yyl-react"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "/dist",
+    "/test",
+    "**/js/lib"
+  ],
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "none",
+    "printWidth": 100
+  },
+  "scripts": {
+    "all": "webpack",
+    "watch": "webpack --watch",
+    "d": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ./src"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-yyl-react": "^1.0.2",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0",
+    "yyl-base-webpack-config": "^0.3.4"
+  }
+}
