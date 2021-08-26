@@ -1,25 +1,62 @@
 {
-  "name": "yyl-flexlayout",
-  "version": "1.6.7",
-  "description": "mobile layout",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
+  "version": "2.0.0",
+  "main": "output/index.js",
+  "module": "output/index.esm.js",
+  "types": "output/index.d.ts",
+  "eslintConfig": {
+    "env": {
+      "jest": true
+    },
+    "extends": [
+      "yyl-react"
+    ]
+  },
+  "eslintIgnore": [
+    "/node_modules",
+    "/output",
+    "/test"
+  ],
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "none",
+    "printWidth": 100
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint --ext=jsx,ts,tsx ./",
+    "prettier": "prettier --write ./**",
+    "dev": "rollup --config ./rollup.config.js",
+    "d": "rollup --config ./rollup.config.js",
+    "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
+    "w": "rollup --watch --config ./rollup.config.js",
+    "release": "yyr",
+    "prepublishOnly": "npm run prettier & npm run build",
+    "test": "cd ./test/case/base && npm run d",
+    "install:test": "cd ./test/case/base && yarn install"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jackness1208/flexlayout.git"
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.30.0",
+    "eslint-config-yyl-react": "^1.0.2",
+    "postcss": "^8.3.5",
+    "postcss-reporter": "^7.0.2",
+    "prettier": "^2.3.2",
+    "rollup": "^2.53.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "sass": "^1.35.2",
+    "typescript": "^4.3.5"
   },
-  "keywords": [
-    "flexlayout"
-  ],
-  "author": "jackness",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jackness1208/flexlayout/issues"
-  },
-  "homepage": "https://github.com/jackness1208/flexlayout#readme"
+  "name": "yyl-flexlayout",
+  "repository": "https://github.com/jackness1208/flexlayout.git",
+  "author": "liudaojie <liudaojie@yy.com>",
+  "license": "MIT"
 }
