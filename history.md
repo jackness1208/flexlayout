@@ -1,45 +1,69 @@
 # 版本信息
+
+## 2.1.0 (2024-08-23)
+
+- feat: 新增适配 鸿蒙系统
+
+## 2.0.0 (2021-08-26)
+
+- feat: 改成 需要 手动执行的方式
+
 ## 1.6.7 (2021-08-26)
-* fix: 修复 匹配 android 9 错误问题
+
+- fix: 修复 匹配 android 9 错误问题
 
 ## 1.6.6 (2021-08-18)
 
-* feat: 当非 手机端 引入此组件试，不执行相关逻辑
+- feat: 当非 手机端 引入此组件试，不执行相关逻辑
+
 ## 1.6.5 (2021-06-17)
-* fix: 添加 `window.__flexlayoutConfig.vrem` 属性, 如设置为 false 则不会对 横屏的 机子 font-size 进行适配
+
+- fix: 添加 `window.__flexlayoutConfig.vrem` 属性, 如设置为 false 则不会对 横屏的 机子 font-size 进行适配
+
 ## 1.6.4 (2020-05-06)
-* fix: 修复部分机型首次初始化时获取不了屏幕宽度问题
+
+- fix: 修复部分机型首次初始化时获取不了屏幕宽度问题
 
 ## 1.6.2 (2019-03-17)
-* fix: 修复 `pc-layout`, `mobile-layout` 重复添加问题
+
+- fix: 修复 `pc-layout`, `mobile-layout` 重复添加问题
 
 ## 1.6.0 (2019-03-12)
-* feat: 添加 window.onresize 事件， 如 窗口大小发生变化 则重新初始化
+
+- feat: 添加 window.onresize 事件， 如 窗口大小发生变化 则重新初始化
 
 ## 1.5.0 (2018-09-16)
-* 做成 npm 包
+
+- 做成 npm 包
 
 ### 1.4.2 [2016-01-16]
-* feat: 将dpr 改为 分成 3, 2.5, 2, 1.5, 1 五种
-* fix: 修复 dpr 字体问题
+
+- feat: 将 dpr 改为 分成 3, 2.5, 2, 1.5, 1 五种
+- fix: 修复 dpr 字体问题
 
 ### 1.4.1 [2016-01-12]
-* feat: 将 dpr 归纳成 3 2 1 三种， 其他向下取整
-* fix: 强制打开 视频流所发(选择性打开，发现在 dpr 部分会存在问题, 暂时措施)
+
+- feat: 将 dpr 归纳成 3 2 1 三种， 其他向下取整
+- fix: 强制打开 视频流所发(选择性打开，发现在 dpr 部分会存在问题, 暂时措施)
 
 ### 1.4.0 [2016-12-05]
-* feat: 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
+
+- feat: 新增定义 字体用的 dpr 方法, 将缩放默认设为 false
 
 ### 1.3.0 [2016-8-26]
-* feat: 添加 组件会根据 window.__flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
-* feat: pc 端观看 本组件页面也会进行 font-size, dpr 计算
+
+- feat: 添加 组件会根据 window.\_\_flexlayoutConfig.scale 来判断是否执行页面 缩放处理设置
+- feat: pc 端观看 本组件页面也会进行 font-size, dpr 计算
 
 ### 1.2.0 [2016-7-21]
-* feat: 添加防止重复加载此js 功能
+
+- feat: 添加防止重复加载此 js 功能
 
 ### 1.1.1 [2016-3-31]
-* fix: 修复 组件 在 华为 M8 下显示有问题 BUG
-* fix: 修复 组件 在 乐视 X501 下显示有问题 BUG
+
+- fix: 修复 组件 在 华为 M8 下显示有问题 BUG
+- fix: 修复 组件 在 乐视 X501 下显示有问题 BUG
 
 ### 1.1.0 [2016-3-3]
-* feat: 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC端则 只添加 样式，不会触发 viewport init
+
+- feat: 在 html 通过 classname 对 PC、手机、ios、 andorid 进行区分, 若为 PC 端则 只添加 样式，不会触发 viewport init

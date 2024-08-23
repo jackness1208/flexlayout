@@ -1,12 +1,13 @@
 /*!
- * yyl-flexlayout esm 2.0.0
- * (c) 2020 - 2021 jackness
+ * yyl-flexlayout esm 2.1.0
+ * (c) 2020 - 2024 jackness
  * Released under the MIT License.
  */
 var iUA = navigator.userAgent;
 var UA = {
     YY: /YY[/ ][0-9.]+/.test(iUA),
     Android: /Android[/ ](\d+\.\d+|\d+)/.test(iUA) ? RegExp.$1 : false,
+    Harmony: /HarmonyOS/.test(iUA),
     IOS: /(iPhone|iPod|iPad)/.test(iUA),
     UCBrowser: /UCBrowser|UCWEB/.test(iUA)
 };
@@ -59,7 +60,7 @@ function initFlexlayout(op) {
                 scHeight = scHeight * dpr;
             }
         }
-        else if (UA.Android) {
+        else if (UA.Android || UA.Harmony) {
             // 修复部分机型内嵌页(oppo R8) 无论是 clientWidth、 offsetWidth、 screenWidth 都相等的情况（webview 已写死尺寸， 缩放不了）
             if (docEl.clientWidth === docEl.offsetWidth && docEl.offsetWidth === scWidth) {
                 needScale = false;
