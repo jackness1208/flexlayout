@@ -3,7 +3,7 @@ const iUA = navigator.userAgent
 const UA = {
   YY: /YY[/ ][0-9.]+/.test(iUA),
   Android: /Android[/ ](\d+\.\d+|\d+)/.test(iUA) ? RegExp.$1 : false,
-  Harmony: /HarmonyOS/.test(iUA),
+  Harmony: /Harmony/.test(iUA),
   IOS: /(iPhone|iPod|iPad)/.test(iUA),
   UCBrowser: /UCBrowser|UCWEB/.test(iUA)
 }
